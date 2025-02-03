@@ -1,0 +1,550 @@
+body {
+  background-color: #323437;
+  color: #34342e;
+  font-family: Arial, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* margin: 7px; */
+  /* min-height: 100vh; */
+}
+
+/* logooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+.logo {
+  display: flex;
+  justify-content: center;
+  
+}
+
+@keyframes rainbowAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rainbow-animated {
+  font-size: 48px;
+  width: 280px;
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text; 
+  color: transparent;
+  animation: rainbowAnimation 4s infinite linear;
+}
+
+
+
+.logospace {
+  width: 80%;
+  height: 100px;
+  /* margin-left: 100px; */
+  gap: 2px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 5px solid black; */
+}
+
+.logo1 ,img {
+  width: 200px;
+}
+
+
+/*  cetagoryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy */
+
+/* ปิด Popup Overlay เริ่มต้น */
+.popup.popup-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+  
+}
+
+.popup-content {
+  position: relative;
+  top: 50%;
+  left: 46%;
+
+  transform:  translate(-50%, -50%) scale(0);
+  background: #ffffff;
+  width: 600px;
+  height: 500px;
+  z-index: 2;
+  text-align: center;
+  padding-inline: 20px;
+  box-sizing: border-box;
+  
+
+  
+  
+}
+
+.category {
+  gap: 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  
+}
+
+@keyframes rgbAnimation {
+  0% {
+    border-color: rgb(255, 0, 0); /* สีแดง */
+  }
+  25% {
+    border-color: rgb(0, 255, 0); /* สีเขียว */
+  }
+  50% {
+    border-color: rgb(0, 0, 255); /* สีน้ำเงิน */
+  }
+  75% {
+    border-color: rgb(255, 255, 0); /* สีเหลือง */
+  }
+  100% {
+    border-color: rgb(255, 0, 0); /* กลับไปที่สีแดง */
+  }
+}
+
+.category1 {
+  background-image: url('assen/img/daily.jpg'); /* ใส่ที่อยู่ของรูปภาพ */
+  background-size: 30%; /* ปรับขนาดให้เต็มพื้นที่ */
+  background-position: center;
+  filter: brightness(90%);
+  color: #3498db; /* ใช้สีที่ต้องการ */
+  font-size: 20px; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+
+.category2 {
+  background-image: url('assen/img/work.jpg'); /* ใส่ที่อยู่ของรูปภาพ */
+  background-size: 30%; /* ปรับขนาดให้เต็มพื้นที่ */
+  background-position: center;
+  filter: brightness(90%);
+  color: #e65454; /* ใช้สีที่ต้องการ */
+  font-size: 20px; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+.category3 {
+  background-image: url('assen/img/at\ home.jpg'); /* ใส่ที่อยู่ของรูปภาพ */
+  background-size: 30%; /* ปรับขนาดให้เต็มพื้นที่ */
+  background-position: center;
+  filter: brightness(90%);
+  color: #54e654; /* ใช้สีที่ต้องการ */
+  font-size: 20px; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+.button.category1 .button.category2 .button.category3 {
+  height: 50px;
+}
+
+
+.popup .close-btn {
+  position: absolute;
+  right: 200px;
+  top: 400px;
+  background: #000000;
+  color: #9e9e9e;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  padding-right: -20px;
+  border-radius: 100px;
+  width: 200px;
+}
+
+.popup.active .popup-overlay {
+  display: block;
+}
+
+.popup.active .popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%, 100%) scale(1);
+  box-shadow: 0 1px 1px 0, 0 1px 20px 0;
+  border-radius: 10px;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.category-list li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #ff0000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-list li:hover {
+  background: #8d6868;
+}
+
+button {
+  height: 70px;
+  border: none;
+  background: #ffffff;
+  color: rgb(41, 41, 41);
+  border-radius: 100px;
+  padding: 5px 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 2px 0px 0, 0 3px 2px 0;
+  animation: rgbAnimation 4s infinite; /* ทำให้เคลื่อนที่ไปเรื่อย ๆ */
+  border: 2px solid transparent; 
+  
+}
+
+button:hover {
+  background: #757575;
+}
+
+
+
+
+/* manu tabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb */
+.manu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* border: 3px solid black; */
+}
+
+.rowmanu {
+  width: 55%;
+  height: 70px;
+  display: flex;
+  border-radius: 15px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  box-shadow: 0 0px 0px 0, 0 8px 20px 0;
+  background-color: #ffffff;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-containerfb {
+  margin: 0px;
+  box-shadow: 0 0px 0px 0, 0 0px 0px 0;
+  border-radius: 14px;
+  background: #323437;
+  gap: 5px;
+  padding-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  /* align-self: flex-start; */
+  transform-style: preserve-3d;
+  align-self: flex-start;
+}
+
+.button-80.englishfb, .button-80.thaifb {
+  width: 70px;
+  /* padding-left: 9px; */
+  /* box-shadow: 0 0px 0px 0, 0 0px 1cap 0; */
+  text-align: center;
+  
+}
+
+
+
+.button-80 {
+  width: 120px;
+  height: 50px;
+  background: #fff;
+  backface-visibility: hidden;
+  border-radius: .500rem;
+  border-style: solid;
+  border-width: .100rem;
+  box-sizing: border-box;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: .90rem 1.125rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+    
+}
+
+.button-80:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-80:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.button-80:focus {
+  outline: 0 solid transparent;
+}
+
+.button-80:focus:before {
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-80:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-80:focus:not(:focus-visible):before {
+  border-width: 0;
+}
+
+.button-80:not(:disabled):active {
+  transform: translateY(.125rem);
+}
+
+/* status */
+
+
+/* display carddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
+
+.flashcard {
+  padding: auto;
+  perspective: 1000px;
+  width: 700px;
+  height: 500px;
+  margin: 20px auto;
+  position: relative;
+ 
+  /* padding-left: 28px; */
+}
+
+.flashcard-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s, opacity 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-inner.slide-next {
+  opacity: 2;
+}
+
+.flashcard-inner.slide-prev {
+  opacity: 2;
+}
+
+.flashcard-inner.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  background-color: #f9f9f9;
+}
+
+.flashcard-container {
+  position: relative;
+  overflow: hidden;
+  padding: 80px;
+  margin: -50px auto;
+  text-align: center;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
+}
+
+.slide-animation {
+  animation: slide 1s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+      opacity: 0;
+      transform: translateY(40px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+
+/* card flip playing pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp */
+.card-container {
+  width: 350px;
+  height: 500px;
+  padding: auto;
+  perspective: 1000px; /* เพิ่มมิติ 3D */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center; 
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 40px;
+  position: relative;
+  transform-style: preserve-3d; /* ทำให้หมุนในมิติ 3D ได้ */
+  transition: transform 0.6s; /* เพิ่มการเคลื่อนไหว */
+}
+
+.card .front, .card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* ซ่อนอีกด้านของการ์ด */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border: 1px solid #000;
+}
+
+.card .front {
+  background-color: #fff;
+}
+
+.card .back {
+  background-color: #f4f4f4;
+  transform: rotateY(180deg); /* หมุนด้านหลัง */
+}
+
+.card.flipped {
+  display: flex;
+  align-self: flex-end;
+  transform: rotateY(180deg); /* หมุน 180 องศา */
+}
+
+/* buttonn next and previous cardddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd */
+
+.nextlayout {
+  display: flex;
+  justify-content: center;
+}
+
+.button1-container button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+  position: relative;
+  top: 0%;
+}
+
+.nplayout {
+  width: 260px;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
+}
+
+
+/* footerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr*/
+
+.footter {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 150px;
+  margin-top: 250px;
+  background-color: #ececec;
+}
